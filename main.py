@@ -24,10 +24,10 @@ def reverse_video(input_path, output_directory, output_filename):
     video = VideoFileClip(input_path)
     mirrored_video = video.fx(vfx.mirror_x)
     save_path = os.path.join(output_directory, output_filename)
-    mirrored_video.write_videofile(save_path)
+    mirrored_video.write_videofile(save_path, threads=4, fps=30)
 
 if __name__ == "__main__":
-    url = "https://www.tiktok.com/@iam.asiadoll/video/7197460711801376006?lang=fr"
+    url = "https://www.tiktok.com/@nicolux84/video/7308416177196289313"
     output_directory = "output/"
     os.makedirs(output_directory, exist_ok=True)
 
